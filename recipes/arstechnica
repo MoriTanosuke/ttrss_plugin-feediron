@@ -15,10 +15,15 @@
             "section[@class='article-guts']"
         ],
         "cleanup": [
-            "figcaption",
+            "figure",
             "aside",
             "div[@class='article-expander']",
             "nav"
-        ]
+        ],
+        "modify": [{
+            "type": "regex",
+            "pattern": "(data-thumb=\"(.+?)\".*?data-src=\"(.+?)\".*?>)",
+            "replace": "><a href=\"$2\"><img src=\"$1\" \/><\/a>"
+        }]
     }
 }
